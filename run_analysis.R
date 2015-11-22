@@ -2,30 +2,29 @@
 
 # 1) Merges the training and the test sets to create one data set.
 
-make_subject_dataset <- function() {
-    subject_test <- read.table('./UCI HAR Dataset/test/subject_test.txt')
-    subject_train <- read.table('./UCI HAR Dataset/train/subject_train.txt')
-    subject_merged <- rbind(subject_train, subject_test)
-    names(subject_merged) <- "subject"
-    subject_merged
+make_subject_data <- function() {
+    subject_test_data <- read.table('./UCI HAR Dataset/test/subject_test.txt')
+    subject_train_data <- read.table('./UCI HAR Dataset/train/subject_train.txt')
+    subject_merged_data <- rbind(subject_train_data, subject_test_data)
+    names(subject_merged_data) <- "subject"
+    subject_merged_data
 }
 
-make_X_dataset <- function() {
-    X_test <- read.table('./UCI HAR Dataset/test/X_test.txt')
-    X_train <- read.table('./UCI HAR Dataset/train/X_train.txt')
-    X_merged  <- rbind(X_train, X_test)
+make_X_data <- function() {
+    X_test_data <- read.table('./UCI HAR Dataset/test/X_test.txt')
+    X_train_data <- read.table('./UCI HAR Dataset/train/X_train.txt')
+    X_merged_data  <- rbind(X_train_data, X_test_data)
 }
 
-make_y_dataset <- function() {
-    y_test <- read.table('./UCI HAR Dataset/test/y_test.txt')
-    y_train <- read.table('./UCI HAR Dataset/train/y_train.txt')
-    y_merged  <- rbind(y_train, y_test)
+make_y_data <- function() {
+    y_test_data <- read.table('./UCI HAR Dataset/test/y_test.txt')
+    y_train_data <- read.table('./UCI HAR Dataset/train/y_train.txt')
+    y_merged_data  <- rbind(y_train_data, y_test_data)
 }
 
-subject_dataset <- make_subject_dataset()
-X_dataset <- make_X_dataset()
-y_dataset <- make_y_dataset()
-
+subject_dataset <- make_subject_data()
+X_dataset <- make_X_data()
+y_dataset <- make_y_data()
 
 # 2) Extracts only the measurements on the mean and standard deviation for each measurement. 
 
